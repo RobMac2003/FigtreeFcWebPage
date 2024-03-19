@@ -1,6 +1,8 @@
-# Getting Started with Create React App
+# FigtreeFc website uni project
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Please read documentation.md in docs folder 
+#
+Below is defualt react project readme will update later
 
 ## Available Scripts
 
