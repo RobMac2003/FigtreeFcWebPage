@@ -1,6 +1,6 @@
 import logo from './logo.svg';
 import './App.css';
-import MyComponent from './dataFetch'; // Make sure to adjust the path to where your MyComponent is located
+import MyComponent from './dataFetch';
 import ScrollableList from "./components/displayData";
 import FilterBar from './components/FilterBar';
 function App() {
