@@ -30,12 +30,12 @@ function MyComponent() {
 }
 */
 
-export async function fetchData() { //updates cache
-    if (!cache) {
-        const response = await axios.get('https://mc-api.dribl.com/api/fixtures?date_range=all&season=jJmX5WkNno&club=LBdDXyQdb7');
+export async function fetchData(season = 'jJmX5WkNno',competition = '',league = '') { //updates cache
+    //if (!cache) {
+        const response = await axios.get('https://mc-api.dribl.com/api/fixtures?date_range=all&season='+season+'&club=LBdDXyQdb7&competition='+competition+'&league='+league);
         cache = response.data;
         console.log(cache);
-    }
+   // }
     console.log("in fetchdata")
     return cache;
 }
