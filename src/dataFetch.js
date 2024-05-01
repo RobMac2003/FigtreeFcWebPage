@@ -32,7 +32,7 @@ function MyComponent() {
 
 export async function fetchData() { //updates cache
     if (!cache) {
-        const response = await axios.get('https://mc-api.dribl.com/api/fixtures?date_range=all&season=1pN6RepN0g&club=LBdDXyQdb7');
+        const response = await axios.get('https://mc-api.dribl.com/api/fixtures?date_range=all&season=jJmX5WkNno&club=LBdDXyQdb7');
         cache = response.data;
         console.log(cache);
     }

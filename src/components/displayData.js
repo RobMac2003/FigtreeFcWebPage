@@ -15,7 +15,7 @@ const ScrollableList =  () => {
                 const nitems = await fetchData();
                 if (nitems && nitems.data) {
                     console.log(nitems);
-                    setItems(nitems.data.slice(0,3).map(item => ({
+                    setItems(nitems.data.slice(0,29).map(item => ({
                         text: item.attributes.name,
                         homeLogo: item.attributes.home_logo,
                         awayLogo: item.attributes.away_logo,
