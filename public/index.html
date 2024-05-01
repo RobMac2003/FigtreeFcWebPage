@@ -2,11 +2,6 @@
 <html lang="en">
 
   <head>
-    <h1>Fixtures</h1>
-    <h2>Figtree</h2>
-
-
-    <link rel="stylesheet" type="text/css" href="styleSheet.css">
 
     <script src="/path/to/your/bundled/javascript/file.js"></script>
 
@@ -34,11 +29,191 @@
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
     <title>React App</title>
+
+    <style>
+      body {
+        margin: 0;
+        font-family: Nunito Sans, sans-serif;
+      }
+      /* Header styles */
+      .header {
+        background-color: #333;
+        color: #fff;
+        padding: 10px;
+      }
+      .header-buttons {
+        display: flex;
+        justify-content: space-around;
+      }
+      .header-buttons button {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-size: 9px;
+        text-align: right;
+        cursor: pointer;
+      }
+      /* Image bar styles */
+      .image-bar {
+        background-color: #242e6b;
+        display: flex;
+        justify-content: flex-start; /* Align left */
+        align-items: center;
+        height: 90px;
+      }
+      .image-bar img {
+        width: 90px;
+        height: 90px;
+      }
+      /* Navigation bar styles */
+      .nav-bar {
+        background-color: #DEE0E9;
+        padding: 10px;
+      }
+      .nav-bar-buttons {
+        display: flex;
+        justify-content: right;
+        align-items: center;
+      }
+      .nav-bar-buttons button {
+        background-color: transparent;
+        border: none;
+        color: #333;
+        text-align: right;
+        font-size: 10px; /* Smaller font size */
+        cursor: pointer;
+        margin: 0 10px;
+      }
+      /* Big blue gradient bar styles */
+      .big-bar {
+        background: linear-gradient(#DEE0E9,#242e6b);
+        color: #fff;
+        height: 160px;
+        text-align: left; /* Align text to the left */
+        padding: 20px;
+        font-size: 90px; /* Font size */
+        position: relative;
+      }
+      /* Scroll down menu styles */
+      .scroll-menu {
+        position: absolute;
+        bottom: 1px;
+        left: 5px; /* Align to the left */
+        background-color: transparent;
+        padding: 1px 5px;
+        border-radius: 1px;
+        z-index: 1; /* Ensure menu is above the background */
+      }
+      .scroll-menu select {
+        font-size: 10px; /* Smaller font size */
+      }
+      /* Filter option styles */
+      .filter-options {
+        background-color: #fff;
+        color: #D82727;
+        padding: 10px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      .filter-options label {
+        margin-right: 10px;
+      }
+      .filter-options select {
+        font-size: 12px;
+        margin-right: 10px;
+      }
+      /* Adjust filter layout */
+      .filter-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+    </style>
+
   </head>
 
   
 
   <body>
+  <!-- Header -->
+  <div class="header">
+    <div class="header-buttons">
+      <button>Facebook</button>
+      <button>Field Status</button>
+      <button>Calendar</button>
+      <button>Fixtures</button>
+    </div>
+  </div>
+
+  <!-- Image Bar -->
+  <div class="image-bar">
+    <img src="your_image.jpg" alt="Image">
+  </div>
+
+  <!-- Navigation Bar -->
+  <div class="nav-bar">
+    <div class="nav-bar-buttons">
+      <button>Home</button>
+      <button>About ></button>
+      <button>Registration </button>
+      <button>Resources ></button>
+      <button>Shop</button>
+      <button>Contact</button>
+      <button>Login</button>
+    </div>
+  </div>
+
+  <!-- Big Blue Gradient Bar -->
+  <div class="big-bar">
+    Fixtures
+    <!-- Scroll down menu -->
+    <div class="scroll-menu">
+      <select>
+        <option value="date1">Date 1</option>
+        <option value="date2">Date 2</option>
+      </select>
+    </div>
+  </div>
+
+  <!-- Filter Options -->
+  <div class="filter-options">
+    <div class="filter-container">
+      <label for="age-group">Filter by Age Groups</label>
+      <select id="age-group">
+        <option value="all">Age</option>
+        <option value="Mens35">Men's over 35's</option>
+        <option value="Womens35">Women's over 35's</option>
+      </select>
+    </div>
+
+    <div class="filter-container">
+      <label for="division">Filter by Division</label>
+      <select id="division">
+        <option value="all">Division</option>
+        <option value="division1">A</option>
+        <option value="division2">B</option>
+      </select>
+    </div>
+
+    <div class="filter-container">
+      <label for="season">Filter by Season</label>
+      <select id="season">
+        <option value="all">Season</option>
+        <option value="season1">2023/24</option>
+        <option value="season2">2022/23</option>
+      </select>
+    </div>
+
+    <div class="filter-container">
+      <label for="fixture-status">Filter by Fixture Status</label>
+      <select id="fixture-status">
+        <option value="all">Fixture Status</option>
+        <option value="scheduled">Pending</option>
+        <option value="completed">Completed</option>
+      </select>
+    </div>
+  </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
       <script src="/src/index.js"></script>
@@ -53,5 +228,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
+
+
   </body>
 </html>
