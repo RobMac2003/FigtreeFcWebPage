@@ -40,6 +40,8 @@
         background-color: #333;
         color: #fff;
         padding: 10px;
+        display: flex;
+        justify-content: flex-end;
       }
       .header-buttons {
         display: flex;
@@ -129,6 +131,10 @@
         flex-direction: column;
         align-items: center;
       }
+      /* Yellow background for Field Status button */
+      .field-status-button {
+        background-color: #FFDB58 !important;
+      }
     </style>
 
   </head>
@@ -139,9 +145,8 @@
   <!-- Header -->
   <div class="header">
     <div class="header-buttons">
-      <button>Facebook</button>
+      <a href="https://www.facebook.com/FigtreeFC/"><button>Facebook</button></a>
       <button>Field Status</button>
-      <button>Calendar</button>
       <button>Fixtures</button>
     </div>
   </div>
