@@ -77,22 +77,26 @@ const ScrollableList =  () => {
             {items.map((item, index) => (
                 <div key={index} className="list-item">
                     <div className="container">
-                        <p>{item.homeName} vs {item.awayName}</p>
-                        <p>{item.date}</p>
+                        <div className="versus"><p>{item.homeName} vs {item.awayName}</p></div>
+                        <div className ="gameInfo">
+                            <table className="table">
+                                <thead>{item.date}</thead>
+                                <tbody><div className="team-info">
+                                    <div className="team">
+                                        <img src={item.homeLogo} alt={""}/>
+                                    </div>
 
-                        <div className="team-info">
-                            <div className="team">
-                                <img src={item.homeLogo} alt={""}/>
-                            </div>
+                                    <div className="score"> - </div>
 
-                            <div className="score"> - </div>
+                                    <div className="team">
+                                        <img src={item.awayLogo} alt={""}/>
+                                    </div>
 
-                            <div className="team">
-                                <img src={item.awayLogo} alt={""}/>
-                            </div>
-
-                            <div>{item.groundName} {item.fieldName}</div>
-                        </div>
+                                    <div>{item.groundName} {item.fieldName}</div>
+                                </div>
+                                </tbody>
+                            </table>
+                    </div>
                     </div>
                 </div>
             ))}

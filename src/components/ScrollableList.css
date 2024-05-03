@@ -4,7 +4,29 @@
     color: #242e6b
 }
 
-.list-item {
+.versus {
+    display: flex;
+    background-color: #DEE0E9;
+    align-items: center;
+    text-align: left;
+    font-size: 18px;
+    gap: 10px;
+    border: 1px solid #DEE0E9;
+    border-radius: 15px;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-left: -70px;
+    margin-right: -70px;
+    font-weight: bold;
+    font-family: Nunito Sans,sans-serif;
+}
+
+.table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gameInfo {
     display: flex;
     background-color: #DEE0E9;
     align-items: center;
@@ -13,6 +35,8 @@
     border-radius: 15px;
     padding: 10px;
     margin-bottom: 10px;
+    margin-left: -70px;
+    margin-right: -70px;
 }
 
 .list-item img {
