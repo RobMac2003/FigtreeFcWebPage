@@ -22,6 +22,26 @@ export let triggerUpdate = false;
 export const setTriggerUpdate = (newValue) => {
     triggerUpdate = newValue;
 };
+
+export let season = 'jJmX5WkNno';
+
+export const setSeason = (newValue) => {
+    season = newValue;
+};
+
+export let competition = '';
+
+export const setCompetition= (newValue) => {
+    competition = newValue;
+};
+
+export let league = '';
+
+export const setLeague = (newValue) => {
+    league = newValue;
+};
+
+
 const fetchDataAndExtractOptions = async (apiUrl) => {
     try {
         const response = await fetch(apiUrl);
@@ -123,21 +143,33 @@ const FilterBar = () => {
         };
     */
 
+    const useForceUpdate = () => {
+        const [value, setValue] = useState(0); // Initial value doesn't matter
+        return () => setValue(value => value + 1); // Update the state to force a re-render
+    }
     const filterFunction = (event,dropDownName) => {
         const selectedVal = event.target.value;
         console.log(event.type)
         if(dropDownName === "seasons") {
             setFilters({...filters, Season: selectedVal});
+            setSeason(selectedVal);
+            setCompetition('');
+            setLeague('')
         }
         else if(dropDownName === "competitions") {
             setFilters({...filters, Competition: selectedVal});
+            setCompetition(selectedVal);
+            setLeague('')
         }
         else if(dropDownName === "leagues") {
             setFilters({...filters, League: selectedVal});
+            setLeague(selectedVal)
         }
         console.log("Filter selected:", selectedVal);
-        setTriggerUpdate(true);
-        console.log(triggerUpdate)
+
+        console.log(season)
+        const updateEvent = new CustomEvent('updateScrollableList');
+        window.dispatchEvent(updateEvent); //triggers updateScrollabeList Event
 
     };
 

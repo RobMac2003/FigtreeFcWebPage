@@ -3,7 +3,7 @@ import './ScrollableList.css'
 import {fetchData, getCache, makeApiCall} from "../dataFetch";
 import {cache} from "../dataFetch";
 //import {refreshInterval,setFilter} from "./FilterBar";
-import { triggerUpdate, setTriggerUpdate } from './FilterBar';
+import {triggerUpdate, setTriggerUpdate, season, competition, league} from './FilterBar';
 const ScrollableList =  () => {
 
     const [items, setItems] = useState(null);
@@ -12,10 +12,10 @@ const ScrollableList =  () => {
     useEffect(() => {
         const fetchD = async () => {
             try {
-                const nitems = await fetchData();
+                const nitems = await fetchData(season,competition,league);
                 if (nitems && nitems.data) {
                     console.log(nitems);
-                    setItems(nitems.data.slice(0,3).map(item => ({
+                    setItems(nitems.data.slice(0,29).map(item => ({
                         text: item.attributes.name,
                         homeLogo: item.attributes.home_logo,
                         awayLogo: item.attributes.away_logo,
@@ -38,12 +38,21 @@ const ScrollableList =  () => {
         //return () => clearInterval(intervalId); // Cleanup on unmount
 
         // Clear the existing interval (if any)
+        // Event listener
+
+
 
        // intervalRef.current = setInterval(fetchD, refreshInterval);
         //return () => clearInterval(intervalRef.current);
         if (triggerUpdate) { // Only execute if triggerUpdate is true
-            fetchD();
+            console.log("executed")
+            //fetchD("1pN6RepN0g");
         }
+        //event listener
+        window.addEventListener('updateScrollableList', fetchD);
+
+        // Cleanup (remove listener when component unmounts)
+        return () => window.removeEventListener('updateScrollableList', fetchD);
     }, [triggerUpdate]);      // }, [refreshInterval]);
 
 
@@ -68,24 +77,26 @@ const ScrollableList =  () => {
             {items.map((item, index) => (
                 <div key={index} className="list-item">
                     <div className="container">
-                        <p>{item.date}</p>
+                        <div className="versus"><p>{item.homeName} vs {item.awayName}</p></div>
+                        <div className ="gameInfo">
+                            <table className="table">
+                                <thead>{item.date}</thead>
+                                <tbody><div className="team-info">
+                                    <div className="team">
+                                        <img src={item.homeLogo} alt={""}/>
+                                    </div>
 
-                        <div className="team-info">
-                            <div className="team">
-                                <img src={item.homeLogo} alt={""}/>
-                                {item.homeName}
-                            </div>
+                                    <div className="score"> - </div>
 
-                            <div className="score"> - </div>
+                                    <div className="team">
+                                        <img src={item.awayLogo} alt={""}/>
+                                    </div>
 
-                            <div className="team">
-                                {item.awayName}
-                                <img src={item.awayLogo} alt=""/>
-
-                            </div>
-                        </div>
-
-                        <p>{item.groundName} {item.fieldName}</p>
+                                    <div>{item.groundName} {item.fieldName}</div>
+                                </div>
+                                </tbody>
+                            </table>
+                    </div>
                     </div>
                 </div>
             ))}

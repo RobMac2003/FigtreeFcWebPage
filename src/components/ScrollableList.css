@@ -1,20 +1,48 @@
 .scrollable-list {
     max-height: 400px;
+    width: max-content;
     overflow-y: auto;
+    color: #242e6b
 }
 
-.list-item {
+.versus {
     display: flex;
+    background-color: #DEE0E9;
+    align-items: center;
+    text-align: left;
+    font-size: 18px;
+    gap: 10px;
+    border: 1px solid #DEE0E9;
+    border-radius: 15px;
+    padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 10px;
+    font-weight: bold;
+    font-family: Nunito Sans,sans-serif;
+}
+
+.table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gameInfo {
+    display: flex;
+    background-color: #DEE0E9;
     align-items: center;
     gap: 10px;
-    border: 1px solid #000;
+    border: 1px solid #DEE0E9;
+    border-radius: 15px;
     padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
     margin-bottom: 10px;
 }
 
 .list-item img {
-    width: 50px;
-    height: 50px;
+    width: 170px;
+    height: 170px;
 }
 
 /*inside list item css below */
@@ -31,5 +59,3 @@
 img {
     width: 50px; /* Adjust size as needed */
 }
-
-
