@@ -40,7 +40,10 @@
         background-color: #333;
         color: #fff;
         padding: 10px;
+        display: flex;
+        justify-content: flex-end;
       }
+
       .header-buttons {
         display: flex;
         justify-content: space-around;
@@ -80,7 +83,7 @@
         border: none;
         color: #242e6b;
         text-align: right;
-        font-size: 10px; /* Smaller font size */
+        font-size: 10px;
         cursor: pointer;
         margin: 0 10px;
       }
@@ -131,7 +134,7 @@
       }
       /* Yellow background for Field Status button */
       .field-status-button {
-        background-color: #F4BC1C !important;
+        background-color: #F4BC1C;
       }
 
       /* Display of fixtures */
@@ -155,7 +158,7 @@
   <div class="header">
     <div class="header-buttons">
       <a href="https://www.facebook.com/FigtreeFC/"><button>Facebook</button></a>
-      <button>Field Status</button>
+      <button class="field-status-button">Field Status</button>
       <button>Fixtures</button>
     </div>
   </div>
