@@ -1,13 +1,16 @@
 .scrollable-list {
     max-height: 400px;
     overflow-y: auto;
+    color: #242e6b
 }
 
 .list-item {
     display: flex;
+    background-color: #DEE0E9;
     align-items: center;
     gap: 10px;
-    border: 1px solid #000;
+    border: 1px solid #DEE0E9;
+    border-radius: 15px;
     padding: 10px;
     margin-bottom: 10px;
 }
@@ -31,9 +34,3 @@
 img {
     width: 50px; /* Adjust size as needed */
 }
-
-body {
-    background-color: white;
-}
-
-

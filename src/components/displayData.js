@@ -90,9 +90,9 @@ const ScrollableList =  () => {
                             <div className="team">
                                 <img src={item.awayLogo} alt={""}/>
                             </div>
-                        </div>
 
-                        <p>{item.groundName} {item.fieldName}</p>
+                            <div>{item.groundName} {item.fieldName}</div>
+                        </div>
                     </div>
                 </div>
             ))}
