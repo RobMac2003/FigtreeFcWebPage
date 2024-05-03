@@ -77,20 +77,18 @@ const ScrollableList =  () => {
             {items.map((item, index) => (
                 <div key={index} className="list-item">
                     <div className="container">
+                        <p>{item.homeName} vs {item.awayName}</p>
                         <p>{item.date}</p>
 
                         <div className="team-info">
                             <div className="team">
                                 <img src={item.homeLogo} alt={""}/>
-                                {item.homeName}
                             </div>
 
                             <div className="score"> - </div>
 
                             <div className="team">
-                                {item.awayName}
-                                <img src={item.awayLogo} alt=""/>
-
+                                <img src={item.awayLogo} alt={""}/>
                             </div>
                         </div>
 
