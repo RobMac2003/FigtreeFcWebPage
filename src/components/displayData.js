@@ -81,7 +81,7 @@ const ScrollableList =  () => {
                         <div className ="gameInfo">
                             <table className="table">
                                 <thead>{item.date}</thead>
-                                <tbody><div className="team-info">
+                                <tbody className="team-info">
                                     <div className="team">
                                         <img src={item.homeLogo} alt={""}/>
                                     </div>
@@ -93,7 +93,6 @@ const ScrollableList =  () => {
                                     </div>
 
                                     <div>{item.groundName} {item.fieldName}</div>
-                                </div>
                                 </tbody>
                             </table>
                     </div>
