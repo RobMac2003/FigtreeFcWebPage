@@ -5,19 +5,10 @@ import ScrollableList from "./components/displayData";
 import FilterBar from './components/FilterBar';
 function App() {
   return (
-
       <div className="App">
-
         <header className="App-header">
             <FilterBar />
-          <img src={logo} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
-          </p>
-
-
             <div> <ScrollableList/></div>
-
         </header>
       </div>
   );
