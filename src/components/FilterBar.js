@@ -16,14 +16,15 @@ export function setFilter() {
     refreshInterval = 10000;
 }
 */
-
+const defaultSeason = 'jJmX5WkNno'; //Hi to whom ever is unfortunate enough to have to manually update this each year
+                                            //changing this will change the default season that the fixtures show :)
 export let triggerUpdate = false;
 
 export const setTriggerUpdate = (newValue) => {
     triggerUpdate = newValue;
 };
 
-export let season = 'jJmX5WkNno';
+export let season = defaultSeason;
 
 export const setSeason = (newValue) => {
     season = newValue;
@@ -180,11 +181,16 @@ const FilterBar = () => {
         refreshInterval = 1;
     };
 */
-    const clearFilters = () => {
+    const clearFilters = () => { //clears filters and sets the season back to the defaultSeason
         setFilters({        Season: '',
             Competition: '',League: ' '});
         setOtherOptions([]);
         setLeagueOptions([]);
+        setSeason(defaultSeason);
+        setCompetition('');
+        setLeague('')
+        const updateEvent = new CustomEvent('updateScrollableList');
+        window.dispatchEvent(updateEvent); //triggers updateScrollabeList Event
         console.log("Filters cleared");
     };
     return (
