@@ -3,7 +3,7 @@ import './ScrollableList.css'
 import {fetchData, getCache, makeApiCall} from "../dataFetch";
 import {cache} from "../dataFetch";
 //import {refreshInterval,setFilter} from "./FilterBar";
-import {triggerUpdate, setTriggerUpdate, season, competition, league} from './FilterBar';
+import {triggerUpdate, setTriggerUpdate, season, competition, league, cursor, defaultSeason} from './FilterBar';
 const ScrollableList =  () => {
 
     const [items, setItems] = useState(null);
@@ -12,7 +12,11 @@ const ScrollableList =  () => {
     useEffect(() => {
         const fetchD = async () => {
             try {
-                const nitems = await fetchData(season,competition,league);
+                let dateRange = 'all';
+                if(defaultSeason == season){
+                    dateRange= 'default';
+                }
+                const nitems = await fetchData(dateRange,season,competition,league,cursor);
                 if (nitems && nitems.data) {
                     console.log(nitems);
                     setItems(nitems.data.slice(0,29).map(item => ({
