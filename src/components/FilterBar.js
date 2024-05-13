@@ -1,5 +1,6 @@
 // FilterBar.js
 import React, { useState, useEffect } from 'react';
+import './filterBar.css';
 // 'https://mc-api.dribl.com/api/list/leagues?&competition=LBdDXzxdb7&sort=%2Bname'
 import DisplayData from "./displayData";
 import {fetchData} from "../dataFetch";
