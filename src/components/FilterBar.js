@@ -171,7 +171,7 @@ const FilterBar = () => {
                     ))}
                 </select>
                 {/* league filter bar */}
-                <select value={filters.League} onChange={(event)=>filterFunction(event, 'leagues')}>
+                <select value={filters.League} onChange={(event) => filterFunction(event, 'leagues')}>
                     <option value="">Filter by league</option>
                     {leagueOption.map(option => (
                         <option key={option.id} value={option.id}>

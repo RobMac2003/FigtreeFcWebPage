@@ -117,15 +117,15 @@
         color: #D82727;
         padding: 10px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        text-align: left;
       }
       .filter-options label {
         margin-right: 10px;
       }
       .filter-options select {
         font-size: 12px;
-        margin-right: 10px;
+        margin-left: 10px;
       }
       /* Adjust filter layout */
       .filter-container {
@@ -185,48 +185,19 @@
 
   <!-- Filter Options -->
   <div class="filter-options">
+
     <div class="filter-container">
-      <label for="age-group">Filter by Age Groups</label>
-      <select id="age-group">
-        <option value="all">Age</option>
-        <option value="Junior">Juniors' U6-11  </option>
-        <option value="Graded">Graded U12-18 </option>
-        <option value="Mens35">Men's over 35's</option>
-        <option value="Womens35">Women's over 35's</option>
-      </select>
+      <label>Filter by Season</label>
     </div>
 
     <div class="filter-container">
-      <label for="division">Filter by Division</label>
-      <select id="division">
-        <option value="all">Division</option>
-        <option value="division1">A</option>
-        <option value="division2">B</option>
-        <option value="division3">C</option>
-        <option value="division4">D</option>
-      </select>
+      <label>Filter by Competition</label>
     </div>
 
     <div class="filter-container">
-      <label for="season">Filter by Season</label>
-      <select id="season">
-        <option value="all">Season</option>
-        <option value="season1">2023/24</option>
-        <option value="season2">2022/23</option>
-        <option value="season3">2021/22</option>
-        <option value="season4">2020/21</option>
-      </select>
+      <label>Filter by League</label>
     </div>
 
-    <div class="filter-container">
-      <label for="fixture-status">Filter by Fixture Status</label>
-      <select id="fixture-status">
-        <option value="all">Fixture Status</option>
-        <option value="scheduled">Pending</option>
-        <option value="completed">Completed</option>
-        <option value="notstarted">Not Started</option>
-      </select>
-    </div>
   </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
