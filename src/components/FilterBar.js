@@ -1,29 +1,15 @@
-// FilterBar.js
 import React, { useState, useEffect } from 'react';
-// 'https://mc-api.dribl.com/api/list/leagues?&competition=LBdDXzxdb7&sort=%2Bname'
-import DisplayData from "./displayData";
-import {fetchData} from "../dataFetch";
-import ScrollableList from "./displayData";
+import {getCache} from "../dataFetch";
 
-
-
-//comment
-
-/*
-export let refreshInterval = 10000; // Initial value (10 seconds)
-
-export function setFilter() {
-    refreshInterval = 10000;
-}
-*/
-
+export const defaultSeason = 'jJmX5WkNno'; //Hi to whom ever is unfortunate enough to have to manually update this each year
+                                            //changing this will change the default season that the fixtures show :)
 export let triggerUpdate = false;
 
 export const setTriggerUpdate = (newValue) => {
     triggerUpdate = newValue;
 };
 
-export let season = 'jJmX5WkNno';
+export let season = defaultSeason;
 
 export const setSeason = (newValue) => {
     season = newValue;
@@ -41,7 +27,11 @@ export const setLeague = (newValue) => {
     league = newValue;
 };
 
+export let cursor = '';
 
+export const setCursor = (newValue) => {
+    cursor = newValue;
+};
 const fetchDataAndExtractOptions = async (apiUrl) => {
     try {
         const response = await fetch(apiUrl);
@@ -55,46 +45,6 @@ const fetchDataAndExtractOptions = async (apiUrl) => {
         return []; // Return an empty array in case of an error
     }
 };
-/*
-const fetchDataAndExtractOptions = async (apiUrl) => {
-    try {
-        const response = await fetch(apiUrl);
-        const data = await response.json();
-        return data.data.map(item => ({
-            id: item.id,
-            label: item.title
-        }));
-    } catch (error) {
-        console.error('Error fetching data:', error);
-        return []; // Return an empty array in case of an error
-    }
-};
-
-const FilterBar = () => {
-    const [season, setSeason] = useState('');
-    const [options, setOptions] = useState([]);
-    const [otherOptions, setOtherOptions] = useState([]);
-
-    useEffect(() => {
-        // Fetch data from the first API
-        fetchDataAndExtractOptions('https://api.example.com/leagues')
-            .then(extractedOptions => setOptions(extractedOptions));
-
-        // Fetch data from the second API
-        fetchDataAndExtractOptions('https://api.example.com/leagues2')
-            .then(extractedOtherOptions => setOtherOptions(extractedOtherOptions));
-    }, []);
-
-    const filterFunction = (event) => {
-        setSeason(event.target.value);
-        console.log("Filter selected:", event.target.value);
-    };
-
-    const clearFilters = () => {
-        setSeason('');
-        console.log("Filters cleared");
-    };
-*/
 const FilterBar = () => {
     //const [season, setSeason] = useState('');
     const [filters, setFilters] = useState({
@@ -135,14 +85,6 @@ const FilterBar = () => {
         }
     }, [filters.Competition]); // Trigger the effect whenever the selected season changes
 
-
-    /*
-        const filterFunction = (event) => {
-            setSeason(event.target.value);
-            console.log("Filter selected:", event.target.value);
-        };
-    */
-
     const useForceUpdate = () => {
         const [value, setValue] = useState(0); // Initial value doesn't matter
         return () => setValue(value => value + 1); // Update the state to force a re-render
@@ -173,19 +115,30 @@ const FilterBar = () => {
 
     };
 
-
-
-    /*
-    const filterFunction = async (event, dropDownName) => {
-        refreshInterval = 1;
-    };
-*/
-    const clearFilters = () => {
+    const clearFilters = () => { //clears filters and sets the season back to the defaultSeason
         setFilters({        Season: '',
             Competition: '',League: ' '});
         setOtherOptions([]);
         setLeagueOptions([]);
+        setSeason(defaultSeason);
+        setCompetition('');
+        setLeague('');
+        setCursor('');
+        const updateEvent = new CustomEvent('updateScrollableList');
+        window.dispatchEvent(updateEvent); //triggers updateScrollabeList Event
         console.log("Filters cleared");
+    };
+
+    const nextPage = () => { //gets cursor for next page set it to cursor variable and calls updateScrollableList event
+        cursor = getCache().meta.next_cursor;
+        const updateEvent = new CustomEvent('updateScrollableList');
+        window.dispatchEvent(updateEvent); //triggers updateScrollableList Event
+    };
+
+    const prevPage = () => { // works the same
+        cursor = getCache().meta.prev_cursor;
+        const updateEvent = new CustomEvent('updateScrollableList');
+        window.dispatchEvent(updateEvent); //triggers updateScrollableList Event
     };
     return (
         <div>
@@ -222,7 +175,8 @@ const FilterBar = () => {
                 </select>
 
                 <button onClick={clearFilters}>Clear Filters</button>
-
+                <button onClick={prevPage}>Previous page</button>
+                <button onClick={nextPage}>Next page</button>
 
 
             </div>
