@@ -35,6 +35,7 @@
         margin: 0;
         font-family: Nunito Sans, sans-serif;
       }
+
       /* Header styles */
       .header {
         background-color: #333;
@@ -64,13 +65,14 @@
         height: 90px;
       }
       .image-bar img {
-        width: 198px;
-        height: 173px;
+        width: 160px;
+        height: 135px;
       }
       /* Navigation bar styles */
       .nav-bar {
         background-color: #DEE0E9;
-        padding: 10px;
+        padding: 2px;
+        height: 30px;
       }
       .nav-bar-buttons {
         display: flex;
@@ -115,15 +117,15 @@
         color: #D82727;
         padding: 10px;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        justify-content: left;
+        text-align: left;
       }
       .filter-options label {
         margin-right: 10px;
       }
       .filter-options select {
         font-size: 12px;
-        margin-right: 10px;
+        margin-left: 10px;
       }
       /* Adjust filter layout */
       .filter-container {
@@ -136,18 +138,11 @@
         background-color: #F4BC1C !important;
       }
 
-      /* Display of fixtures */
-
-      .app {
-        background-color: white;
-      }
-
-      #logos {
-        width: 300px;
-        height: 300px;
+      #facebook {
+        height: 25px;
+        width: 25px;
       }
     </style>
-
   </head>
 
   
@@ -156,7 +151,7 @@
   <!-- Header -->
   <div class="header">
     <div class="header-buttons">
-      <a href="https://www.facebook.com/FigtreeFC/"><button>Facebook</button></a>
+      <a href="https://www.facebook.com/FigtreeFC/"><button> <img id="facebook" src="facebook.png" alt="Image"></button></a>
       <button class="field-status-button">Field Status</button>
       <button>Fixtures</button>
     </div>
@@ -164,19 +159,20 @@
 
   <!-- Image Bar -->
   <div class="image-bar">
-    <img src="figtreelogo.png" alt="Image">
+    <img src="logoImage.png" alt="Image">
   </div>
 
   <!-- Navigation Bar -->
   <div class="nav-bar">
     <div class="nav-bar-buttons">
-      <button>Home</button>
-      <button>About ></button>
-      <button>Registration </button>
-      <button>Resources ></button>
-      <button>Shop</button>
-      <button>Contact</button>
-      <button>Login</button>
+      <button><b>Home</b></button>
+      <button><b>About ></b></button>
+      <button><b>Registration</b> </button>
+      <button><b>Resources</b></button>
+      <button><b>Shop</b></button>
+      <button><b>Contact</b></button>
+      <button><b>Login</b></button>
+
     </div>
   </div>
 
@@ -194,48 +190,19 @@
 
   <!-- Filter Options -->
   <div class="filter-options">
+
     <div class="filter-container">
-      <label for="age-group">Filter by Age Groups</label>
-      <select id="age-group">
-        <option value="all">Age</option>
-        <option value="Junior">Juniors' U6-11  </option>
-        <option value="Graded">Graded U12-18 </option>
-        <option value="Mens35">Men's over 35's</option>
-        <option value="Womens35">Women's over 35's</option>
-      </select>
+      <label>Filter by Season</label>
     </div>
 
     <div class="filter-container">
-      <label for="division">Filter by Division</label>
-      <select id="division">
-        <option value="all">Division</option>
-        <option value="division1">A</option>
-        <option value="division2">B</option>
-        <option value="division3">C</option>
-        <option value="division4">D</option>
-      </select>
+      <label>Filter by Competition</label>
     </div>
 
     <div class="filter-container">
-      <label for="season">Filter by Season</label>
-      <select id="season">
-        <option value="all">Season</option>
-        <option value="season1">2023/24</option>
-        <option value="season2">2022/23</option>
-        <option value="season3">2021/22</option>
-        <option value="season4">2020/21</option>
-      </select>
+      <label>Filter by League</label>
     </div>
 
-    <div class="filter-container">
-      <label for="fixture-status">Filter by Fixture Status</label>
-      <select id="fixture-status">
-        <option value="all">Fixture Status</option>
-        <option value="scheduled">Pending</option>
-        <option value="completed">Completed</option>
-        <option value="notstarted">Not Started</option>
-      </select>
-    </div>
   </div>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root">
@@ -251,7 +218,7 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-
+    <div> SPONSORS </div>
 
   </body>
 </html>

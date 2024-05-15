@@ -1,8 +1,10 @@
 .scrollable-list {
-    max-height: 400px;
-    width: max-content;
+    max-height: 700px;
     overflow-y: auto;
-    color: #242e6b
+    overflow-x: auto;
+    color: #242e6b;
+    align-items: center;
+    background-color: white;
 }
 
 .versus {
@@ -11,13 +13,12 @@
     align-items: center;
     text-align: left;
     font-size: 18px;
-    gap: 10px;
     border: 1px solid #DEE0E9;
     border-radius: 15px;
-    padding: 10px;
+    padding: 2px;
     padding-right: 30px;
     padding-left: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 7px;
     font-weight: bold;
     font-family: Nunito Sans,sans-serif;
 }
@@ -37,7 +38,7 @@
     padding: 10px;
     padding-right: 30px;
     padding-left: 30px;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 .list-item img {

@@ -1,0 +1,22 @@
+/* Filter option styles */
+.filter-options {
+    background-color: #fff;
+    color: #D82727;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.filter-options label {
+    margin-right: 10px;
+}
+.filter-options select {
+    font-size: 12px;
+    margin-right: 10px;
+}
+/* Adjust filter layout */
+.filter-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
