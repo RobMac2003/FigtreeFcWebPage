@@ -40,7 +40,7 @@
       .header {
         background-color: #333;
         color: #fff;
-        padding: 10px;
+        padding: 4px;
         display: flex;
         justify-content: flex-end;
       }
@@ -62,11 +62,12 @@
         display: flex;
         justify-content: flex-start; /* Align left */
         align-items: center;
-        height: 90px;
+        height: 106px;
       }
       .image-bar img {
-        width: 160px;
-        height: 135px;
+        width: 180px;
+        height: 160px
+        z-index: ;
       }
       /* Navigation bar styles */
       .nav-bar {
@@ -83,16 +84,17 @@
         background-color: transparent;
         border: none;
         color: #242e6b;
-        text-align: right;
-        font-size: 10px; /* Smaller font size */
+        text-align: center;
+        vertical-align: middle;
+        font-size: 13px; /* Smaller font size */
         cursor: pointer;
         margin: 0 10px;
       }
       /* Big blue gradient bar styles */
       .big-bar {
-        background: linear-gradient(#DEE0E9,#242e6b);
+        background: linear-gradient(transparent,#242e6b);
         color: #fff;
-        height: 160px;
+        height: 180px;
         text-align: left; /* Align text to the left */
         padding: 20px;
         font-size: 90px; /* Font size */
@@ -135,7 +137,7 @@
       }
       /* Yellow background for Field Status button */
       .field-status-button {
-        background-color: #F4BC1C !important;
+        background-color: #efaa1d !important;
       }
 
       #facebook {
@@ -159,19 +161,19 @@
 
   <!-- Image Bar -->
   <div class="image-bar">
-    <img src="logoImage.png" alt="Image">
+    <img src="logoImage.png"  <div style = "position:absolute; left:250px; top:40px;" alt="Image" >
   </div>
 
   <!-- Navigation Bar -->
   <div class="nav-bar">
     <div class="nav-bar-buttons">
-      <button><b>Home</b></button>
-      <button><b>About ></b></button>
-      <button><b>Registration</b> </button>
-      <button><b>Resources</b></button>
-      <button><b>Shop</b></button>
-      <button><b>Contact</b></button>
-      <button><b>Login</b></button>
+      <button>Home</button>
+      <button>About</button>
+      <button>Registration</button>
+      <button>Resources</button>
+      <button>Shop</button>
+      <button>Contact</button>
+      <button>Login</button>
 
     </div>
   </div>
