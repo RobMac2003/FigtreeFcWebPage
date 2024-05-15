@@ -148,6 +148,21 @@ const FilterBar = () => {
     };
     return (
         <div>
+            span.style.fontSize = "25px";
+            <div class="filter-options">
+                <div class="filter-container">
+                    <label>Filter by Season</label>
+                </div>
+
+                <div class="filter-container">
+                    <label>Filter by Competition</label>
+                </div>
+
+                <div class="filter-container">
+                    <label>Filter by League</label>
+                </div>
+
+            </div>
             {/* First filter bar */}
             <div className="filter-bar">
                 <select value={filters.Season} onChange={(event)=>filterFunction(event, 'seasons')}>
@@ -170,6 +185,7 @@ const FilterBar = () => {
                         </option>
                     ))}
                 </select>
+
                 {/* league filter bar */}
                 <select value={filters.League} onChange={(event) => filterFunction(event, 'leagues')}>
                     <option value="">Filter by league</option>
