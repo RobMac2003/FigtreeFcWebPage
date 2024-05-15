@@ -1,7 +1,7 @@
 .scrollable-list {
     max-height: 700px;
+    width: 100%;
     overflow-y: auto;
-    overflow-x: auto;
     color: #242e6b;
     align-items: center;
     background-color: white;
@@ -21,6 +21,7 @@
     margin-bottom: 7px;
     font-weight: bold;
     font-family: Nunito Sans,sans-serif;
+
 }
 
 .table{
@@ -39,6 +40,7 @@
     padding-right: 30px;
     padding-left: 30px;
     margin-bottom: 25px;
+    border-top: 8px #242e6b;
 }
 
 .list-item img {
@@ -49,7 +51,7 @@
 /*inside list item css below */
 
 .container {
-    width: 80%;
+    width: 100%;
     margin: auto;
 }
 .team-info {
