@@ -1,4 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import './filterBar.css';
+// 'https://mc-api.dribl.com/api/list/leagues?&competition=LBdDXzxdb7&sort=%2Bname'
+import DisplayData from "./displayData";
+import {fetchData} from "../dataFetch";
+import ScrollableList from "./displayData";
+
 import {getCache} from "../dataFetch";
 
 export const defaultSeason = 'jJmX5WkNno'; //Hi to whom ever is unfortunate enough to have to manually update this each year
@@ -142,6 +148,21 @@ const FilterBar = () => {
     };
     return (
         <div>
+            span.style.fontSize = "25px";
+            <div class="filter-options">
+                <div class="filter-container">
+                    <label>Filter by Season</label>
+                </div>
+
+                <div class="filter-container">
+                    <label>Filter by Competition</label>
+                </div>
+
+                <div class="filter-container">
+                    <label>Filter by League</label>
+                </div>
+
+            </div>
             {/* First filter bar */}
             <div className="filter-bar">
                 <select value={filters.Season} onChange={(event)=>filterFunction(event, 'seasons')}>
@@ -164,8 +185,9 @@ const FilterBar = () => {
                         </option>
                     ))}
                 </select>
+
                 {/* league filter bar */}
-                <select value={filters.League} onChange={(event)=>filterFunction(event, 'leagues')}>
+                <select value={filters.League} onChange={(event) => filterFunction(event, 'leagues')}>
                     <option value="">Filter by league</option>
                     {leagueOption.map(option => (
                         <option key={option.id} value={option.id}>
