@@ -70,7 +70,7 @@ const ScrollableList =  () => {
                                         <img src={item.homeLogo} alt={""}/>
                                     </div>
 
-                                    <div className="score"> - </div>
+                                    <div className="score">{item.homeScore} - {item.awayScore}</div>
 
                                     <div className="team">
                                         <img src={item.awayLogo} alt={""}/>
