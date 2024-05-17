@@ -28,7 +28,7 @@
       work correctly both with client-side routing and a non-root public URL.
       Learn how to configure a non-root public URL by running `npm run build`.
     -->
-    <title>React App</title>
+    <title>Fixtures</title>
 
     <style>
       body {
@@ -47,14 +47,29 @@
       .header-buttons {
         display: flex;
         justify-content: space-around;
+        text-align: center;
       }
       .header-buttons button {
         background-color: transparent;
         border: none;
         color: #fff;
-        font-size: 9px;
-        text-align: right;
+        font-size: 12px;
+        text-align: center;
         cursor: pointer;
+        line-height: 1.5;
+      }
+      .mainpage-buttons button {
+        background-color: transparent;
+        border: none;
+        color: #fff;
+        font-size: 12px;
+        text-align: left;
+        cursor: pointer;
+        line-height: 1.5;
+        position: absolute;
+        left: auto;
+        width: 100px;
+        height: 120px;
       }
       /* Image bar styles */
       .image-bar {
@@ -62,17 +77,17 @@
         display: flex;
         justify-content: flex-start; /* Align left */
         align-items: center;
-        height: 106px;
+        height: 90px;
       }
       .image-bar img {
-        width: 180px;
-        height: 160px;
+        width: 170px;
+        height: 150px;
       }
       /* Navigation bar styles */
       .nav-bar {
         background-color: #DEE0E9;
         padding: 2px;
-        height: 30px;
+        height: 20px;
       }
       .nav-bar-buttons {
         display: flex;
@@ -93,7 +108,7 @@
       .big-bar {
         background: linear-gradient(transparent,#242e6b);
         color: #fff;
-        height: 180px;
+        height: 140px;
         text-align: left; /* Align text to the left */
         padding: 20px;
         font-size: 90px; /* Font size */
@@ -152,6 +167,7 @@
   <!-- Header -->
   <div class="header">
     <div class="header-buttons">
+      <a href="https://www.figtreefc.com.au/"><button class="mainpage-buttons">Figtree Football Club</button></a>
       <a href="https://www.facebook.com/FigtreeFC/"><button> <img id="facebook" src="facebook.png" alt="Image"></button></a>
       <button class="field-status-button">Field Status</button>
       <button>Fixtures</button>

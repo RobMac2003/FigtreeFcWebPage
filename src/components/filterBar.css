@@ -1,7 +1,9 @@
 .filter-wrapper {
-    border: 0.5px solid black;
-    padding: 10px;
-    margin: 8px 0;
+    border: 2px solid black;
+    padding-bottom: 17px;
+    padding-left: 15px;
+    padding-right: 15px;
+    margin: 7px 0;
     border-radius: 5px;
     background-color: #f9f9f9;
 }
@@ -9,19 +11,19 @@
 .filter-title {
     font-size: 20px;
     display: block;
-    margin-bottom: 8px;
+    margin-bottom: 10px;
 }
 
 .filter-bar {
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 10px;
     flex-wrap: wrap;
 }
 
 .filter-container {
     display: flex;
-    align-items: baseline;
+    align-items: center;
     gap: 5px;
     background-color: #ffffff;
     padding: 5px;
