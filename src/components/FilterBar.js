@@ -146,67 +146,59 @@ const FilterBar = () => {
         const updateEvent = new CustomEvent('updateScrollableList');
         window.dispatchEvent(updateEvent); //triggers updateScrollableList Event
     };
-    return (
-        <div>
-            span.style.fontSize = "25px";
-            <div class="filter-options">
-                <div class="filter-container">
-                    <label>Filter by Season</label>
-                </div>
+    {
+    return(
+            <div className="filter-wrapper">
+                <span className="filter-title"></span>
+                <div className="filter-bar">
+                    <div className="filter-container">
+                        <label className="filter-label">Filter by Season</label>
+                        <select value={filters.Season} onChange={(event) => filterFunction(event, 'seasons')} className="filter-select">
+                            <option value="">Select a season</option>
+                            {options.map(option => (
+                                <option key={option.id} value={option.id}>
+                                    {option.label}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
 
-                <div class="filter-container">
-                    <label>Filter by Competition</label>
-                </div>
+                    <div className="filter-container">
+                        <label className="filter-label">Filter by Competition</label>
+                        <select value={filters.Competition} onChange={(event) => filterFunction(event, 'competitions')} className="filter-select">
+                            <option value="">Filter by Competition</option>
+                            {otherOptions.map(option => (
+                                <option key={option.id} value={option.id}>
+                                    {option.label}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
 
-                <div class="filter-container">
-                    <label>Filter by League</label>
-                </div>
+                    <div className="filter-container">
+                        <label className="filter-label">Filter by League</label>
+                        <select value={filters.League} onChange={(event) => filterFunction(event, 'leagues')} className="filter-select">
+                            <option value="">Filter by League</option>
+                            {leagueOption.map(option => (
+                                <option key={option.id} value={option.id}>
+                                    {option.label}
+                                </option>
+                            ))}
+                        </select>
+                    </div>
 
+                    <button onClick={clearFilters} className="filter-button">Clear Filters</button>
+                    <button onClick={prevPage} className="filter-button">Previous Page</button>
+                    <button onClick={nextPage} className="filter-button">Next Page</button>
+                </div>
             </div>
-            {/* First filter bar */}
-            <div className="filter-bar">
-                <select value={filters.Season} onChange={(event)=>filterFunction(event, 'seasons')}>
-                    <option value="">Select a season</option>
-                    {options.map(option => (
-                        <option key={option.id} value={option.id}>
-                            {option.label}
-                        </option>
-                    ))}
-                </select>
+        );
+    }
 
 
 
-            {/* Second filter bar */}
-                <select value={filters.Competition} onChange={(event)=>filterFunction(event, 'competitions')}>
-                    <option value="">Filter by Competition</option>
-                    {otherOptions.map(option => (
-                        <option key={option.id} value={option.id}>
-                            {option.label}
-                        </option>
-                    ))}
-                </select>
-
-                {/* league filter bar */}
-                <select value={filters.League} onChange={(event) => filterFunction(event, 'leagues')}>
-                    <option value="">Filter by league</option>
-                    {leagueOption.map(option => (
-                        <option key={option.id} value={option.id}>
-                            {option.label}
-                        </option>
-                    ))}
-                </select>
-
-                <button onClick={clearFilters}>Clear Filters</button>
-                <button onClick={prevPage}>Previous page</button>
-                <button onClick={nextPage}>Next page</button>
 
 
-            </div>
-
-
-
-        </div>
-    );
 };
 
 export default FilterBar;
