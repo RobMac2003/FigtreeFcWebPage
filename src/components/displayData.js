@@ -2,7 +2,6 @@ import React, {useState, useEffect, useRef} from 'react';
 import './ScrollableList.css'
 import {fetchData, getCache, makeApiCall} from "../dataFetch";
 import {cache} from "../dataFetch";
-//import {refreshInterval,setFilter} from "./FilterBar";
 import {triggerUpdate, setTriggerUpdate, season, competition, league, cursor, defaultSeason} from './FilterBar';
 const ScrollableList =  () => {
 
@@ -28,7 +27,10 @@ const ScrollableList =  () => {
                         groundName: item.attributes.ground_name,
                         fieldName: item.attributes.field_name,
                         date: item.attributes.date,
+                        homeScore: item.attributes.home_score,
+                        awayScore: item.attributes.away_score,
                         imgSrc: 'path/to/image.png' // replace with actual image path
+
                     })));
                 }
             } catch (error) {
@@ -37,17 +39,7 @@ const ScrollableList =  () => {
         };
         console.log("hi")
         fetchD();
-        //const intervalId = setInterval(fetchD, 10000); // Fetch every 10 seconds
 
-        //return () => clearInterval(intervalId); // Cleanup on unmount
-
-        // Clear the existing interval (if any)
-        // Event listener
-
-
-
-       // intervalRef.current = setInterval(fetchD, refreshInterval);
-        //return () => clearInterval(intervalRef.current);
         if (triggerUpdate) { // Only execute if triggerUpdate is true
             console.log("executed")
             //fetchD("1pN6RepN0g");
@@ -63,19 +55,7 @@ const ScrollableList =  () => {
     if (!items) {
         return <div>Loading...</div>; // or some loading spinner
     }
-    /*
-    return (
-        <div className="scrollable-list">
-            {items.map((item, index) => (
-                <div key={index} className="list-item">
-                    <img src={item.imgSrc} alt={item.text}/>
-                    <p>{item.text}</p>
-                </div>
-            ))}
-        </div>
-    );
 
-     */
     return (
         <div className="scrollable-list">
             {items.map((item, index) => (
@@ -90,7 +70,7 @@ const ScrollableList =  () => {
                                         <img src={item.homeLogo} alt={""}/>
                                     </div>
 
-                                    <div className="score"> - </div>
+                                    <div className="score">{item.homeScore} - {item.awayScore}</div>
 
                                     <div className="team">
                                         <img src={item.awayLogo} alt={""}/>
