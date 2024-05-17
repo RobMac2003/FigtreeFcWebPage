@@ -32,6 +32,10 @@
     padding-left: 40px;
 }
 
+.date {
+    padding-right: 40px;
+}
+
 .table{
     margin-left: auto;
     margin-right: auto;

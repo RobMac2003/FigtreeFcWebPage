@@ -2,7 +2,7 @@ import React, {useState, useEffect, useRef} from 'react';
 import './ScrollableList.css'
 import {fetchData, getCache, makeApiCall} from "../dataFetch";
 import {cache} from "../dataFetch";
-import {triggerUpdate, setTriggerUpdate, season, competition, league, cursor, defaultSeason} from './FilterBar';
+import {triggerUpdate, setTriggerUpdate, season, competition, league, cursor, defaultSeason, home} from './FilterBar';
 const ScrollableList =  () => {
 
     const [items, setItems] = useState(null);
@@ -15,7 +15,7 @@ const ScrollableList =  () => {
                 if(defaultSeason == season){
                     dateRange= 'default';
                 }
-                const nitems = await fetchData(dateRange,season,competition,league,cursor);
+                const nitems = await fetchData(dateRange,season,competition,league,cursor,home);
                 if (nitems && nitems.data) {
                     console.log(nitems);
                     setItems(nitems.data.slice(0,29).map(item => ({
@@ -64,8 +64,8 @@ const ScrollableList =  () => {
                         <div className="versus"><p>{item.homeName} vs {item.awayName}</p></div>
                         <div className ="gameInfo">
                             <table className="table">
-                                <thead>{item.date}</thead>
                                 <tbody className="team-info">
+                                    <div className="date">{item.date}</div>
                                     <div className="team">
                                         <img src={item.homeLogo} alt={""}/>
                                     </div>
