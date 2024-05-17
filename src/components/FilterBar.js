@@ -35,6 +35,11 @@ export const setLeague = (newValue) => {
 
 export let cursor = '';
 
+export let home = '';
+
+export const setHome = (newValue) => {
+    home = newValue;
+};
 export const setCursor = (newValue) => {
     cursor = newValue;
 };
@@ -130,6 +135,7 @@ const FilterBar = () => {
         setCompetition('');
         setLeague('');
         setCursor('');
+        setHome('');
         const updateEvent = new CustomEvent('updateScrollableList');
         window.dispatchEvent(updateEvent); //triggers updateScrollabeList Event
         console.log("Filters cleared");
@@ -146,6 +152,13 @@ const FilterBar = () => {
         const updateEvent = new CustomEvent('updateScrollableList');
         window.dispatchEvent(updateEvent); //triggers updateScrollableList Event
     };
+
+    const homeFixtures = () => { // filter by the home games
+        home = '&ground=8zdBGL3DmB';
+        const updateEvent = new CustomEvent('updateScrollableList');
+        window.dispatchEvent(updateEvent); //triggers updateScrollableList Event
+    };
+
     {
     return(
             <div className="filter-wrapper">
@@ -187,6 +200,7 @@ const FilterBar = () => {
                         </select>
                     </div>
 
+                    <button onClick={homeFixtures} className="filter-button">Home Games Only</button>
                     <button onClick={clearFilters} className="filter-button">Clear Filters</button>
                     <button onClick={prevPage} className="filter-button">Previous Page</button>
                     <button onClick={nextPage} className="filter-button">Next Page</button>
