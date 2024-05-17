@@ -76,7 +76,7 @@ const ScrollableList =  () => {
                                         <img src={item.awayLogo} alt={""}/>
                                     </div>
 
-                                    <div>{item.groundName} {item.fieldName}</div>
+                                    <div className="groundInfo" >{item.groundName} {item.fieldName}</div>
                                 </tbody>
                             </table>
                     </div>
