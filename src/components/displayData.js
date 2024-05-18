@@ -3,10 +3,10 @@ import './ScrollableList.css'
 import {fetchData, getCache, makeApiCall} from "../dataFetch";
 import {cache} from "../dataFetch";
 import {triggerUpdate, setTriggerUpdate, season, competition, league, cursor, defaultSeason, home} from './FilterBar';
+import {date} from './datePicker';
 const ScrollableList =  () => {
 
     const [items, setItems] = useState(null);
-  //  const intervalRef = useRef(null); // null ref for interval
 
     useEffect(() => {
         const fetchD = async () => {
@@ -15,7 +15,12 @@ const ScrollableList =  () => {
                 if(defaultSeason == season){
                     dateRange= 'default';
                 }
-                const nitems = await fetchData(dateRange,season,competition,league,cursor,home);
+                let freshDate = ''
+                if(date != ''){ //if user has selected a date
+                    dateRange= 'single-date';
+                    freshDate= '&date[]=' +date;
+                }
+                const nitems = await fetchData(dateRange,season,competition,league,cursor,home,freshDate);
                 if (nitems && nitems.data) {
                     console.log(nitems);
                     setItems(nitems.data.slice(0,29).map(item => ({
