@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './filterBar.css';
-// 'https://mc-api.dribl.com/api/list/leagues?&competition=LBdDXzxdb7&sort=%2Bname'
 import DisplayData from "./displayData";
 import {fetchData} from "../dataFetch";
 import ScrollableList from "./displayData";
-
 import {getCache} from "../dataFetch";
+import CustomDatePicker from "./datePicker"
 
 export const defaultSeason = 'jJmX5WkNno'; //Hi to whom ever is unfortunate enough to have to manually update this each year
                                             //changing this will change the default season that the fixtures show :)
@@ -103,7 +102,16 @@ const FilterBar = () => {
     const filterFunction = (event,dropDownName) => {
         const selectedVal = event.target.value;
         console.log(event.type)
+
         if(dropDownName === "seasons") {
+            /*
+            if(home == '&ground=8zdBGL3DmB'&& season == '1pN6RepN0g'){
+                setHome('&ground=3pmvQW05dv');
+                console.log('happening');
+            }
+            *
+             */
+            console.log('hi', season);
             setFilters({...filters, Season: selectedVal});
             setSeason(selectedVal);
             setCompetition('');
@@ -136,6 +144,10 @@ const FilterBar = () => {
         setLeague('');
         setCursor('');
         setHome('');
+        //reseting Date Picker component
+        const resetEvent = new Event('resize');
+        window.dispatchEvent(resetEvent);
+        //reseting displayData
         const updateEvent = new CustomEvent('updateScrollableList');
         window.dispatchEvent(updateEvent); //triggers updateScrollabeList Event
         console.log("Filters cleared");
@@ -154,7 +166,13 @@ const FilterBar = () => {
     };
 
     const homeFixtures = () => { // filter by the home games
-        home = '&ground=8zdBGL3DmB';
+
+       // if(season == '1pN6RepN0g'){
+            //home = '&ground=3pmvQW05dv';
+      //  }//else {
+           home = '&ground=8zdBGL3DmB';
+       // }
+        console.log(season);
         const updateEvent = new CustomEvent('updateScrollableList');
         window.dispatchEvent(updateEvent); //triggers updateScrollableList Event
     };
