@@ -7,7 +7,6 @@ import {date} from './datePicker';
 const ScrollableList =  () => {
 
     const [items, setItems] = useState(null);
-  //  const intervalRef = useRef(null); // null ref for interval
 
     useEffect(() => {
         const fetchD = async () => {
