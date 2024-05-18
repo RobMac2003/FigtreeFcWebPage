@@ -35,7 +35,6 @@
         font-family: Nunito Sans, sans-serif;
       }
 
-      /* Header styles */
       .header {
         background-color: #2b3136;
         color: #fff;
@@ -69,7 +68,6 @@
         height: auto;
       }
 
-      /* Image bar styles */
       .image-bar {
         background-color: #242e6b;
         display: flex;
@@ -81,7 +79,6 @@
         width: 170px;
         height: 150px;
       }
-      /* Navigation bar styles */
       .nav-bar {
         background-color: #DEE0E9;
         padding: 2px;
@@ -98,34 +95,21 @@
         color: #242e6b;
         text-align: center;
         vertical-align: middle;
-        font-size: 13px; /* Smaller font size */
+        font-size: 13px;
         cursor: pointer;
         margin: 0 10px;
       }
-      /* Big blue gradient bar styles */
+
       .big-bar {
         background: linear-gradient(transparent,#242e6b);
         color: #fff;
         height: 110px;
-        text-align: left; /* Align text to the left */
+        text-align: left;
         padding: 20px;
-        font-size: 75px; /* Font size */
+        font-size: 75px;
         position: relative;
       }
-      /* Scroll down menu styles */
-      .scroll-menu {
-        position: absolute;
-        bottom: 1px;
-        left: 5px; /* Align to the left */
-        background-color: transparent;
-        padding: 1px 5px;
-        border-radius: 1px;
-        z-index: 1; /* Ensure menu is above the background */
-      }
-      .scroll-menu select {
-        font-size: 10px; /* Smaller font size */
-      }
-      /* Filter option styles */
+
       .filter-options {
         background-color: #fff;
         color: #D82727;
@@ -141,12 +125,12 @@
         font-size: 12px;
         margin-left: 10px;
       }
-      /* Adjust filter layout */
       .filter-container {
         display: flex;
         flex-direction: column;
         align-items: center;
       }
+
       /* Yellow background for Field Status button */
       .field-status-button {
         background-color: #ee9933 !important;
@@ -159,40 +143,71 @@
       }
       .sponsors {
         background-color: #242e6b;
-        height: 45px;
+        height: 50px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: grey;
+        color: silver;
         font-size: 12px;
       }
 
-      .goldsp{
+      .goldsp, .silversp, .bronzesp {
         padding-top: 40px;
+        padding-bottom: 30px;
         display: flex;
         align-items: center;
         justify-content: center;
-        color: grey;
-        font-size: 12px;
-      }
-      .silversp{
-        padding-top: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: grey;
+        color: silver;
         font-size: 12px;
       }
 
-      .bronzesp{
-        padding-top: 40px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        color: grey;
-        font-size: 12px;
+      .silversp, .bronzesp {
+        border-top: 0.5px solid silver;
+        margin-top: 40px;
       }
 
+      .sponsor-container {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        justify-items: center;
+        padding: 0 20px;
+      }
+
+      .sponsor-container a {
+        display: block;
+        width: 100%;
+      }
+
+      .sponsor-container img {
+        width: 100%;
+        height: auto;
+        max-width: 300px;
+        max-height: 240px;
+        object-fit: cover;
+      }
+
+      .sponsor-container button {
+        border: none;
+        padding: 0;
+        background: none;
+        width: 100%;
+      }
+
+      .custom-rpsol img {
+        max-width: 200px;
+        max-height: 200px;
+      }
+
+      .custom-building img {
+        max-width: 200px;
+        max-height: 200px;
+      }
+
+      .custom-mcd img {
+        max-width: 230px;
+        max-height: 200px;
+      }
 
 
 
@@ -234,14 +249,7 @@
   <!-- Big Blue Gradient Bar -->
   <div class="big-bar">
     Fixtures
-    <!-- Scroll down menu -->
-    <div class="scroll-menu">
-      <select>
-        <option value="date1">Date 1</option>
-        <option value="date2">Date 2</option>
-      </select>
-    </div>
-  </div>
+
 
 
 
@@ -261,11 +269,46 @@
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
     <div class="sponsors"> OFFICIAL PARTNERS OF FIGTREE FOOTBALL CLUB </div>
-           <div class="goldsp"> GOLD SPONSORS </div>
-  <div class="silversp"> SILVER SPONSORS </div>
-  <div class="bronzesp"> BRONZE SPONSORS </div>
-  <a href="https://turfco.com.au"><button> <img id="turfco" src="BRTurfco.jpg" alt="Image"></button></a>
-  <a href="https://flipout.com.au/locations/albion-park/"><button> <img id="flipout" src="BRFlipout.png" alt="Image"></button></a>
-  <a href="https://www.investmentandplanning.com.au"><button> <img id="rpsol" src="BRRPSolutions.png" alt="Image"></button></a>
+
+  <div class="goldsp">GOLD SPONSORS</div>
+  <div class="sponsor-container">
+    <a href="https://www.azzurriconcrete.com.au"><button><img id="azzu" src="azzyrriconcreta.png" alt="Azzurri Concrete"></button></a>
+    <a href="https://www.stonerealestate.com.au/stone-illawarra/"><button><img id="stone" src="stone.png" alt="Stone Real Estate"></button></a>
+    <a href="https://www.wollongongmazda.com.au"><button><img id="mazda" src="mazda.png" alt="Mazda"></button></a>
+    <a href="https://craftdigitalmarketing.com.au"><button><img id="craft" src="craft.png" alt="Craft Digital Marketing"></button></a>
+    <a href="https://www.everyseasonmyseason.com"><button><img id="season" src="season.png" alt="Every Season My Season"></button></a>
+    <a href="https://www.mortgagechoice.com.au/suzy.wheatley/"><button><img id="mortgage" src="mortgage%20choice.png" alt="Mortgage Choice"></button></a>
+    <a href="https://mkvh.com.au"><button><img id="mkvh" src="mkvh.png" alt="MKVH"></button></a>
+    <a href="https://mcdonalds.com.au" class="custom-mcd"><button><img id="mcd" src="mcd.png" alt="McDonald's"></button></a>
+    <a href="https://www.aclassbuilding.com.au"><button><img id="aclass" src="aclass.png" alt="A Class Building"></button></a>
+    <a href="https://apm.net.au"><button><img id="apm" src="apm.png" alt="APM"></button></a>
+  </div>
+
+  <div class="silversp">SILVER SPONSORS</div>
+  <div class="sponsor-container">
+    <a href="https://catalyzesoftware.com.au"><button><img id="catalyze" src="cataylzesv.png" alt="Catalyze Software"></button></a>
+    <a href="https://www.completehydraulics.com.au"><button><img id="complete" src="completesv.png" alt="Complete Hydraulics"></button></a>
+    <a href="https://gelatissimo.com.au/stores/wollongong/"><button><img id="gelatissimo" src="gelatissimosv.png" alt="Gelatissimo"></button></a>
+    <a href="https://www.mmj.com.au/about/offices/wollongong/"><button><img id="mmj" src="mmjsv.png" alt="MMJ Real Estate"></button></a>
+    <a href="https://www.tyresandmore.com.au/stores/figtree"><button><img id="tyrsesandm" src="tyres&moresv.png" alt="Tyres & More"></button></a>
+    <a href="https://www.livesmartevolve.com"><button><img id="evolvehealth" src="evolvehealthsv.png" alt="Evolve Health"></button></a>
+    <a href="https://www.figtreebrakeclutch.com.au"><button><img id="fbc" src="fbcsv.png" alt="Figtree Brake & Clutch"></button></a>
+    <a href="https://stannoaustralia.com.au"><button><img id="stannd" src="stanndsv.png" alt="Stanno Australia"></button></a>
+    <a href="https://touleng.com.au"><button><img id="touleng" src="toulengsv.png" alt="Toul Engineering"></button></a>
+    <a href="https://www.nmtg.com.au"><button><img id="nmt" src="nmtgsv.png" alt="NMT Group"></button></a>
+    <a href="https://www.souterbuilt.com.au" class="custom-building"><button><img id="building" src="buildingsv.png" alt="Souter Built"></button></a>
+    <a href="https://www.chemcote.com.au"><button><img id="chemcot" src="chemcotesv.png" alt="Chemcote"></button></a>
+    <a href="https://figtreegrove.com.au"><button><img id="figtreeg" src="figtreegrovesv.png" alt="Figtree Grove"></button></a>
+  </div>
+
+  <div class="bronzesp">BRONZE SPONSORS</div>
+  <div class="sponsor-container">
+    <a href="https://turfco.com.au"><button><img id="turfco" src="BRTurfco.jpg" alt="Turfco"></button></a>
+    <a href="https://flipout.com.au/locations/albion-park/"><button><img id="flipout" src="BRFlipout.png" alt="Flip Out"></button></a>
+    <a href="https://www.investmentandplanning.com.au" class="custom-rpsol"><button><img id="rpsol" src="BRRPSolutions.png" alt="RP Solutions"></button></a>
+  </div>
+
+
+
   </body>
 </html>
