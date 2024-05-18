@@ -71,7 +71,7 @@ const ScrollableList =  () => {
                         <div className ="gameInfo">
                             <table className="table">
                                 <tbody className="team-info">
-                                    <div className="date">{item.date}</div>
+                                <div className="dateAndTime">{item.date}</div>
                                     <div className="team">
                                         <img src={item.homeLogo} alt={""}/>
                                     </div>

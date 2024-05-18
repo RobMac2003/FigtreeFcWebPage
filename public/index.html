@@ -4,9 +4,8 @@
   <head>
 
     <script src="/path/to/your/bundled/javascript/file.js"></script>
-
     <meta charset="utf-8" />
-    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="icon" href="%PUBLIC_URL%/FigtreeTab.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="theme-color" content="#000000" />
     <meta
@@ -151,12 +150,52 @@
       /* Yellow background for Field Status button */
       .field-status-button {
         background-color: #ee9933 !important;
+        height: 40px;
       }
 
       #facebook {
         height: 25px;
         width: 25px;
       }
+      .sponsors {
+        background-color: #242e6b;
+        height: 45px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: grey;
+        font-size: 12px;
+      }
+
+      .goldsp{
+        padding-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: grey;
+        font-size: 12px;
+      }
+      .silversp{
+        padding-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: grey;
+        font-size: 12px;
+      }
+
+      .bronzesp{
+        padding-top: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        color: grey;
+        font-size: 12px;
+      }
+
+
+
+
     </style>
   </head>
 
@@ -222,7 +261,12 @@
       To begin the development, run `npm start` or `yarn start`.
       To create a production bundle, use `npm run build` or `yarn build`.
     -->
-    <div> SPONSORS </div>
-
+    <div class="sponsors"> OFFICIAL PARTNERS OF FIGTREE FOOTBALL CLUB </div>
+           <div class="goldsp"> GOLD SPONSORS </div>
+  <div class="silversp"> SILVER SPONSORS </div>
+  <div class="bronzesp"> BRONZE SPONSORS </div>
+  <a href="https://turfco.com.au"><button> <img id="turfco" src="BRTurfco.jpg" alt="Image"></button></a>
+  <a href="https://flipout.com.au/locations/albion-park/"><button> <img id="flipout" src="BRFlipout.png" alt="Image"></button></a>
+  <a href="https://www.investmentandplanning.com.au"><button> <img id="rpsol" src="BRRPSolutions.png" alt="Image"></button></a>
   </body>
 </html>
