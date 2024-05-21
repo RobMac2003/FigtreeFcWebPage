@@ -4,6 +4,8 @@ import {fetchData, getCache, makeApiCall} from "../dataFetch";
 import {cache} from "../dataFetch";
 import {triggerUpdate, setTriggerUpdate, season, competition, league, cursor, defaultSeason, home} from './FilterBar';
 import {date} from './datePicker';
+import ReadableDate from "../DateConverter";
+
 const ScrollableList =  () => {
 
     const [items, setItems] = useState(null);
@@ -70,7 +72,7 @@ const ScrollableList =  () => {
                         <div className ="gameInfo">
                             <table className="table">
                                 <tbody className="team-info">
-                                <div className="dateAndTime">{item.date}</div>
+                                <div className="dateAndTime"><ReadableDate isoDateString={item.date} /></div>
                                     <div className="team">
                                         <img src={item.homeLogo} alt={""}/>
                                     </div>
