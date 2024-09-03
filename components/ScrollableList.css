@@ -1,0 +1,77 @@
+.scrollable-list {
+    max-height: 700px;
+    width: 100%;
+    overflow-y: auto;
+    color: #242e6b;
+    align-items: center;
+    background-color: white;
+}
+
+.versus {
+    display: flex;
+    background-color: #DEE0E9;
+    align-items: center;
+    text-align: left;
+    font-size: 18px;
+    border: 1px solid #DEE0E9;
+    border-radius: 15px;
+    padding: 2px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 7px;
+    font-weight: bold;
+    font-family: Nunito Sans,sans-serif;
+}
+
+.score {
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.groundInfo {
+    padding-left: 40px;
+}
+
+.date {
+    padding-right: 40px;
+}
+
+.table{
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.gameInfo {
+    display: flex;
+    background-color: #DEE0E9;
+    align-items: center;
+    gap: 10px;
+    border: 1px solid #DEE0E9;
+    border-radius: 15px;
+    padding: 10px;
+    padding-right: 30px;
+    padding-left: 30px;
+    margin-bottom: 25px;
+    border-top: 8px #242e6b;
+    justify-content: space-evenly;
+}
+
+.list-item img {
+    width: 170px;
+    height: 170px;
+}
+
+/*inside list item css below */
+
+.container {
+    width: 100%;
+    margin: auto;
+}
+.team-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+img {
+    width: 50px;
+}
